@@ -1,1 +1,0 @@
-# app.py content placeholder (full code generated previously)
