@@ -1,0 +1,7 @@
+pillow
+PyPDF2
+pdf2image
+reportlab
+streamlit
+streamlit-sortables
+
