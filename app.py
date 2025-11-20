@@ -1,17 +1,3 @@
-app.py
-
-======
-
-Υπέροχα — έφτιαξα για σένα μια **πλήρη, βελτιωμένη έκδοση** της Streamlit εφαρμογής με όλα τα extra που ζήτησες: όμορφο UI/χρώματα, sidebar επιλογών, thumbnails, highlight λέξεων-κλειδιών, επιλογή/εξαγωγή σελίδων, πολλαπλές επιλογές export (single PDF με επιλεγμένες σελίδες, ξεχωριστά PDFs για κάθε σελίδα σε ZIP, εικόνες (PNG) σε ZIP), watermark, προσθήκη αρίθμησης σελίδων, και reorder (drag & drop με fallback).
-
-Αντέγραψε αυτό το αρχείο **όλο** σε `app.py` και το `requirements.txt` που ακολουθεί και κάνε deploy στο Streamlit Cloud — θα λειτουργήσει ως πλήρης εφαρμογή.
-
----
-
-# `app.py` (αντέγραψε ακριβώς)
-
-```python
-# app.py
 import streamlit as st
 from PyPDF2 import PdfReader, PdfWriter
 from pdf2image import convert_from_bytes
@@ -331,49 +317,3 @@ if processed_outputs:
         st.download_button(f"Κατέβασε: {fname}", data=buf.getvalue(), file_name=fname, mime="application/octet-stream")
 else:
     st.info("Προς το παρόν δεν υπάρχει κάποιο επεξεργασμένο αρχείο — επίλεξε σελίδες και πάτησε ένα export κουμπί.")
-```
-
----
-
-# `requirements.txt`
-
-```
-streamlit
-PyPDF2
-pdf2image
-pillow
-reportlab
-streamlit-sortables
-```
-
-> Σημείωση για `pdf2image` και `poppler`: σε κάποιες τοπικές εγκαταστάσεις χρειάζεται να εγκαταστήσεις το σύστημα `poppler` (π.χ. apt install poppler-utils / brew install poppler). Στο Streamlit Cloud συνήθως είναι προεγκατεστημένο και δουλεύει χωρίς επιπλέον βήματα.
-
----
-
-## Οδηγίες (γρήγορα)
-
-1. Δημιούργησε φάκελο, βάλε `app.py` και `requirements.txt` με τα παραπάνω περιεχόμενα.
-2. Δημιούργησε repository στο GitHub και ανέβασε τα αρχεία.
-3. Σύνδεσε το repo στο Streamlit Cloud (share.streamlit.io) → New app → επίλεξε `app.py` → Deploy.
-4. Αν έχεις πρόβλημα με drag & drop, βεβαιώσου ότι η βιβλιοθήκη `streamlit-sortables` είναι στο `requirements.txt` (την πρόσθεσα ήδη). Υπάρχει fallback σε text-input για την σειρά αν δεν δουλεύει.
-
----
-
-Θέλεις να:
-
-1. Να σου φτιάξω εγώ το ZIP με αυτά τα δύο αρχεία (app.py + requirements.txt) και να στο δώσω για download εδώ;
-2. Ή να σε καθοδηγήσω βήμα-βήμα για να το ανεβάσεις στο GitHub & Streamlit Cloud;
-
-Προτίμηση; Θα το κάνω αμέσως — αν θες το ZIP δώσε «ΝΑΙ ZIP» και το ετοιμάζω (ή θα σου το παρέχω με link εδώ).
-
-============
-
-streamlit
-PyPDF2
-pdf2image
-pillow
-reportlab
-streamlit-sortables
-
-
-============
