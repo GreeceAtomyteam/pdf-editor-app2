@@ -1,7 +1,9 @@
 streamlit
 PyPDF2
 pypdf
-reportlab
 pdf2image
 pillow
-python-dotenv
+reportlab
+streamlit-sortables
+pytesseract
+python-docx
